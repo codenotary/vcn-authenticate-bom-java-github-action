@@ -5,7 +5,7 @@ on:
     branches: [main]
 
 jobs:
-  notarize-java-project-with-bom:
+  authenticate-java-project-with-bom:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -27,7 +27,7 @@ jobs:
         env:
            JAVA_HOME: /usr/local/openjdk-17
            PATH: /usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-        # uses: codenotary/vcn-notarize-bom-java-github-action@v1.0.0
+        # uses: codenotary/vcn-authenticate-bom-java-github-action@v1.0.0
         uses: codenotary/vcn-authenticate-bom-java-github-action@main
         with:
           asset: git://.
@@ -46,7 +46,7 @@ jobs:
 
       - name: Authenticate JAR with BoM
         #--> Run the GitHub action
-        # uses: codenotary/vcn-notarize-bom-java-github-action@v1.0.0
+        # uses: codenotary/vcn-authenticate-bom-java-github-action@v1.0.0
         # This 'env' block is necessary because github actions will try to pass the current variables for JAVA_HOME and JDK_HOME to the container
         # only include this if your workflow uses the 'setup-java' actions or sets those environment varialbes (JAVA_HOME, PATH)
         env:
