@@ -1,4 +1,4 @@
-# vcn-notarize-bom-java-github-action
+# vcn-authenticate-bom-java-github-action
 
 GitHub action that uses the **[vcn](https://github.com/codenotary/vcn)** tool from CodeNotary.com to authenticate the the bill of materials (BoM) for Java (Maven) projects. It accepts directories or JARs containing a pom.xml file as input.
 
