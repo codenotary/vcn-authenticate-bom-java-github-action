@@ -17,6 +17,9 @@ inputs:
   cnil_api_key:
     description: 'CNIL API key.'
     required: true
+  signer_id:
+    description: 'CNIL signer ID.'
+    required: true
 runs:
   using: 'docker'
   image: 'docker://codenotary/vcn:bom-maven'
@@ -29,4 +32,6 @@ runs:
     - ${{ inputs.cnil_grpc_port }}
     - --lc-api-key
     - ${{ inputs.cnil_api_key }}
+    - --signerID
+    - ${{ inputs.signer_id }}
     - --bom
